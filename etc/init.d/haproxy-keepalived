@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# postfix      Postfix Mail Transfer Agent
+#
+# chkconfig: 2345 80 30
+# description: Postfix is a Mail Transport Agent, which is the program \
+#              that moves mail from one machine to another.
+# processname: master
+# pidfile: /var/spool/postfix/pid/master.pid
+# config: /etc/postfix/main.cf
+# config: /etc/postfix/master.cf
+#
+# Based on startup script from Simon J Mudd <sjmudd@pobox.com>
+# 25/02/99: Mostly s/sendmail/postfix/g by John A. Martin <jam@jamux.com>
+# 23/11/00: Changes & suggestions by Ajay Ramaswamy <ajayr@bigfoot.com>
+# 20/01/01: Changes to fall in line with RedHat 7.0 style
+# 23/02/01: Fix a few untidy problems with help from Daniel Roesen.
+
+### BEGIN INIT INFO
+# Provides: postfix MTA
+# Required-Start: $local_fs $network $remote_fs
+# Required-Stop: $local_fs $network $remote_fs
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: start and stop postfix
+# Description: Postfix is a Mail Transport Agent, which is the program that
+#              moves mail from one machine to another.
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+/usr/bin/python /opt/dsp/sbin/install_dependencies.py
+/usr/bin/python /opt/dsp/sbin/ip_interface.py
+/usr/bin/python /opt/dsp/sbin/configure_keepalived.py
+/usr/bin/python /opt/dsp/sbin/configure_haproxy.py
+

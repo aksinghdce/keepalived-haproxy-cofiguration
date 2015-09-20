@@ -1,0 +1,5 @@
+#copy _mypath from installer or config directory into your own library's directory
+#then import _mypath into your library script
+#import logger.logger
+#log using logger.info("message")
+#or logger.debug("message")

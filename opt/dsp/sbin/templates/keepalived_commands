@@ -1,0 +1,4 @@
+/sbin/iptables -I INPUT -i $interface -d 224.0.0.0/8 -j ACCEPT
+/sbin/iptables -A INPUT -p 112 -i $interface -j ACCEPT
+/sbin/iptables -A OUTPUT -p 112 -o $interface -j ACCEPT
+/sbin/service iptables save
