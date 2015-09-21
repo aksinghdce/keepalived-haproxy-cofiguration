@@ -5,3 +5,6 @@ The scripts are invoked by etc/init.d/haproxy-keepalived init script. This scrip
 The script works in KVM VM with redhat linux installed.
 
 The set of scripts install haproxy and keepalived. The dependencies get installed from /var/opt/dsp/images/lb.
+
+Test edit:
+updated ~/.gitconfig to remove wrong entry. I don't know how this happened :)
